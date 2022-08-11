@@ -2,21 +2,16 @@ origin: https://graphene.dashkite.io
 identity: ${ email }
 expires: 
   days: 30
-resolvers:
-  collection:
-    binding: collection
 grants:
   - resources:
       - db
       - collections
-    bindings:
-      db: ${ db }
-    methods: [ get, put, delete, post ]
-
-  - resources:
+      - collection status
+      - collection
+      - entry
       - entry list
-    resolvers: [ collection ]
+      - metadata list
+      - query
     bindings:
       db: ${ db }
-      collection: \${ collection }
     methods: [ get, put, delete, post ]

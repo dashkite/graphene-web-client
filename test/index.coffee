@@ -28,14 +28,12 @@ import {
   getRune
 } from "./helpers"
 
-do ->
-
-  { db, collection } = {}
+do ({ email, db, collection, response, content } = {}) ->
 
   email = "alice@acme.org"
 
   localStorage.setItem "identity", email
-  Runes.store await getRune "db create", { email }
+  # Runes.store await getRune "db create", { email }
 
   client = Graphene.Client.create
     base: "https://graphene.dashkite.io"
@@ -54,12 +52,7 @@ do ->
           assert db.address?
           assert db.created?
           assert db.updated?
-          # TODO why is the name not coming back?
-          #      this works in the lambda client
-          #      so why doesn't it work here?
-          #      is the sky-guardian stripping out
-          #      the name somehow?
-          # assert.equal db.name, "My Database"
+          assert.equal db.name, "My Database"
           Runes.store await getRune "db use", 
             email: "alice@acme.org"
             db: db.address
@@ -74,7 +67,7 @@ do ->
           assert db.address?
           assert db.created?
           assert db.updated?
-          # assert.equal db.name, "My Database"
+          assert.equal db.name, "My Database"
 
         await test "Put", wait: false, ->
 
@@ -85,7 +78,7 @@ do ->
           assert db.created?
           assert db.updated?
           assert db.updated > db.created
-          # assert.equal db.name, "My Updated Database"
+          assert.equal db.name, "My Updated Database"
 
         test "Delete"
 
@@ -106,144 +99,141 @@ do ->
           assert collection.updated?
           assert.equal collection.name, "Favorite Films"
 
-        # await test "Status (not ready)", ->
+        await test "Status (not ready)", wait: false, ->
         
-        #   await Time.sleep interval
+          await Time.sleep 2000
 
-        #   response = await collection.getStatus()
+          response = await collection.getStatus()
 
-        #   # console.log "get status", response
-        #   assert.equal response.status?
-        #   assert response.status == "not ready" ||
-        #     response.status == "ready"
+          # console.log "get status", response
+          assert.equal response.status?
+          assert response.status == "not ready" ||
+            response.status == "ready"
 
-        # await _test 
-        #   description: "Status (ready)"
-        #   wait: 15000
-        #   ->
-        #     while response.status != "ready"
-        #       await Time.sleep 1000
-        #       response = await collection.getStatus()
+        await test "Status (ready)", wait: false, ->
 
-        # await test "Get", ->
+          while response.status != "ready"
+            await Time.sleep 1000
+            response = await collection.getStatus()
 
-        #   collection = await db.collections.get collection.byname
-        #   collection = await db.collections.get collection
-        #   # console.log "get collection", collection
-        #   assert collection.byname?
-        #   assert collection.created?
-        #   assert collection.updated?
-        #   # assert.equal collection.name, "Favorite Films"
+        await test "Get", wait: false, ->
 
-        # await test "Put", ->
+          collection = await db.collections.get collection.byname
+          # console.log "get collection", collection
+          assert collection.byname?
+          assert collection.created?
+          assert collection.updated?
+          assert.equal collection.name, "Favorite Films"
 
-        #   collection = await collection.put name: "Favorite Shows And Films"
-        #   # console.log "put collection", collection
-        #   assert collection.byname?
-        #   assert collection.created?
-        #   assert collection.updated?
-        #   assert collection.updated > collection.created
-        #   assert.equal collection.name, "Favorite Shows And Films"
+        await test "Put", ->
+
+          collection = await collection.put name: "Favorite Shows And Films"
+          # console.log "put collection", collection
+          assert collection.byname?
+          assert collection.created?
+          assert collection.updated?
+          assert collection.updated > collection.created
+          assert.equal collection.name, "Favorite Shows And Films"
 
         test "Delete"
         test "List"
 
       ]
 
-    # await test "Entry", await do ->
+    await test "Entry", await do ->
 
-    #   entry = "star-wars"
+      entry = "star-wars"
 
-    #   [
+      [
 
-    #     await test "Empty List (with metadata)", ->
+        await test "Empty List (with metadata)", wait: false, ->
 
-    #       list = await collection.metadata.list()
+          list = await collection.metadata.list()
 
-    #       content = list.entries
+          content = list.entries
         
-    #       # console.log "list entries", content
-    #       assert content.length?
-    #       assert.equal 0, content.length
+          # console.log "list entries", content
+          assert content.length?
+          assert.equal 0, content.length
 
-    #     await test "Create", ->
+        await test "Create", wait: false, ->
 
-    #       content = await collection.entries.put "star-wars",
-    #         title: "Star Wars"
-    #         year: "1977"
+          content = await collection.entries.put "star-wars",
+            title: "Star Wars"
+            year: "1977"
 
-    #       # console.log "create entry", content
-    #       assert content.title?
-    #       assert.equal content.title, "Star Wars"
-    #       assert content.year?
-    #       assert.equal content.year, "1977"
+          # console.log "create entry", content
+          assert content.title?
+          assert.equal content.title, "Star Wars"
+          assert content.year?
+          assert.equal content.year, "1977"
 
-    #     await test "Get", ->
+        await test "Get", wait: false, ->
 
-    #       await Time.sleep interval
+          await Time.sleep 2000
 
-    #       content = await collection.entries.get "star-wars"
+          content = await collection.entries.get "star-wars"
 
-    #       # console.log "get entry", content
-    #       assert content.title?
-    #       assert.equal content.title, "Star Wars"
-    #       assert content.year?
-    #       assert.equal content.year, "1977"
+          # console.log "get entry", content
+          assert content.title?
+          assert.equal content.title, "Star Wars"
+          assert content.year?
+          assert.equal content.year, "1977"
 
-    #     await test "Put", ->
+        await test "Put", wait: false, ->
 
-    #       content = await collection.entries.put "star-wars",
-    #         { content..., director: "George Lucas" }
+          content = await collection.entries.put "star-wars",
+            { content..., director: "George Lucas" }
 
-    #       # console.log "update entry", content
-    #       assert content.title?
-    #       assert.equal content.title, "Star Wars"
-    #       assert content.year?
-    #       assert.equal content.year, "1977"
-    #       assert content.director?
-    #       assert.equal content.director, "George Lucas"
+          # console.log "update entry", content
+          assert content.title?
+          assert.equal content.title, "Star Wars"
+          assert content.year?
+          assert.equal content.year, "1977"
+          assert content.director?
+          assert.equal content.director, "George Lucas"
 
-    #     await test "List", ->
+        await test "List", wait: false, ->
 
-    #       content = await collection.entries.list()
+          content = await collection.entries.list()
         
-    #       # console.log "list entries", content
-    #       assert content.length?
-    #       assert.equal 1, content.length
-    #       assert.equal "Star Wars", content[0].title
+          # console.log "list entries", content
+          assert content.length?
+          assert.equal 1, content.length
+          assert.equal "Star Wars", content[0].title
 
-    #     await test "List (with metadata)", ->
+        await test "List (with metadata)", wait: false, ->
 
-    #       list = await collection.metadata.list()
+          list = await collection.metadata.list()
 
-    #       content = list.entries
+          content = list.entries
         
-    #       # console.log "list entries", content
-    #       assert content.length?
-    #       assert.equal 1, content.length
-    #       assert.equal "Star Wars", content[0].content.title
-    #       # console.log content[0].key
-    #       # assert.equal "star-wars", content[0].key
+          # console.log "list entries", content
+          assert content.length?
+          assert.equal 1, content.length
+          assert.equal "Star Wars", content[0].content.title
+          # console.log content[0].key
+          assert.equal "star-wars", content[0].key
 
-    #     test "Increment"
+        test "Increment"
 
-    #     test "Decrement"
+        test "Decrement"
         
-    #     await test "Query", ->
+        await test "Query", wait: false, ->
 
-    #       await Time.sleep interval
+          await Time.sleep 2000
 
-    #       content = await collection.entries.query title: "Star Wars"
+          content = await collection.entries.query title: "Star Wars"
 
-    #       # console.log "query entry", content
-    #       assert.equal content.director, "George Lucas"
+          console.log "query entry", content
+          assert.equal content.director, "George Lucas"
 
-    #     test "Query All"
+        test "Query All"
 
-    #     await test "Delete", ->
-    #       collection.entries.delete "star-wars"
+        await test "Delete", wait: false, ->
+          collection.entries.delete "star-wars"
 
 
-    #   ]
+      ]
 
   ]
