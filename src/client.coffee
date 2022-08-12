@@ -2,12 +2,11 @@ import * as Fn from "@dashkite/joy/function"
 import * as Meta from "@dashkite/joy/metaclass"
 import { convert } from "@dashkite/bake"
 import { Resource } from "@dashkite/vega-client"
+import { DB } from "@dashkite/graphene-client"
 
 import {
   proxy
-} from "./helpers"
-
-import { DB } from "./db"
+} from "@dashkite/graphene-client/helpers"
 
 class Client
 
@@ -23,7 +22,8 @@ class Client
       origin: @base
       name: resource.name
       bindings: resource.bindings
-      authorization: { @rune, @nonce }
+      # TODO remove this once we have decoration back in API description
+      authorization: rune: {}
     }
     ( resource[ method ] content )
     
