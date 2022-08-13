@@ -23,9 +23,7 @@ do ({ email, client } = {}) ->
   localStorage.setItem "identity", email
   # Runes.store await getRune "db create", { email }
 
-  client = Graphene.Client.create
-    base: "https://graphene.dashkite.io"
-    identity: "alice@acme.org"
+  client = Graphene.Client.create()
 
   run client,
     Database:

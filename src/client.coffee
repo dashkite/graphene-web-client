@@ -3,6 +3,7 @@ import * as Meta from "@dashkite/joy/metaclass"
 import { convert } from "@dashkite/bake"
 import { Resource } from "@dashkite/vega-client"
 import { DB } from "@dashkite/graphene-client"
+import configuration from "./configuration"
 
 import {
   proxy
@@ -14,7 +15,8 @@ class Client
     proxy "db", DB, [ "create", "get" ]
   ]
 
-  @create: ({ base }) ->
+  @create: ({ base } = {}) ->
+    base ?= configuration.base
     Object.assign ( new @ ), { base }
 
   invoke: ({ method, resource, content }) ->
