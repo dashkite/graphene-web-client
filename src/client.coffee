@@ -24,8 +24,6 @@ class Client
       origin: @base
       name: resource.name
       bindings: resource.bindings
-      # TODO remove this once we have decoration back in API description
-      authorization: rune: {}
     }
     ( resource[ method ] content )
     

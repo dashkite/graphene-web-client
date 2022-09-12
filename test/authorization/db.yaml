@@ -6,12 +6,19 @@ grants:
   - resources:
       - db
       - collections
-      - collection status
       - collection
+      - collection indices
+      - collection index
+      - collection status
       - entry
+      - atomic update
       - entry list
+      - entry query
+      - entry query all
+      - metadata
       - metadata list
-      - query
+      - metadata query
+      - metadata query all
     bindings:
       db: ${ db }
     methods: [ get, put, delete, post ]
