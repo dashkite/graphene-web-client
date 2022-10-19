@@ -22,9 +22,11 @@
     "@dashkite/amen": "^0.1.2",
     "@dashkite/amen-console": "file:../amen-console",
     "@dashkite/assert": "^0.1.4",
+    "@dashkite/dolores": "file:../dolores",
     "@dashkite/genie": "^0.5.6",
     "@dashkite/genie-presets": "file:../genie-presets",
     "@dashkite/graphene-client-tests": "file:../graphene-client-tests",
+    "@dashkite/helium": "^0.4.4",
     "@dashkite/polaris": "file:../polaris",
     "@dashkite/runes": "file:../runes",
     "fake-indexeddb": "^4.0.0",
@@ -32,10 +34,6 @@
     "source-map-support": "^0.5.21"
   },
   "dependencies": {
-    "@dashkite/bake": "^0.0.6",
-    "@dashkite/dolores": "file:../dolores",
-    "@dashkite/graphene-client": "file:../graphene-client",
-    "@dashkite/graphite-core": "file:../graphite-core",
     "@dashkite/joy": "^0.3.16",
     "@dashkite/vega-client": "file:../vega-client"
   }
