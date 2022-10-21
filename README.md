@@ -29,9 +29,8 @@ client = Graphene.Client.create()
 
 ## Database
 ```coffeescript
-# the database will be assigned a unique address when you create it
-
 # create a new database (this returns a database object — see "get" for more details)
+# the database will be assigned a unique address when you create it
 
 myDBObject = await client.db.create name: "My Database"
 
@@ -67,7 +66,7 @@ myCollectionReference = client.collection { db: address, collection: "favorite-f
 ```
 
 ## Entries, Indices, and Metadata 
-We can use either a collection object or collection reference to achieve our goals.
+For each scenario, we can use either a collection object or collection reference to achieve our goals.
 ```coffeescript
 # get the content for an entry
 
