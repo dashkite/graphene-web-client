@@ -33,7 +33,7 @@ client = Graphene.Client.create()
 
 ## Database
 ### Create
-Create a new database. The database will be assigned a unique address when you create it. This returns a database object — see [Get](###Get) for more details.
+Create a new database. The database will be assigned a unique address when you create it. This returns a database object — see [Get](#Get) for more details.
 ```coffeescript
 myDB = await client.db.create name: "My Database"
 ```
@@ -66,7 +66,7 @@ await client.db.delete address
 
 ## Collection 
 ### Create
-Create a collection within a database by assigning the collection a byname unique to the database. This returns a collection object — see [Get](###Get) for more details.
+Create a collection within a database by assigning the collection a byname unique to the database. This returns a collection object — see [Get](#Get-1) for more details.
 ```coffeescript
 # with a database object
 
