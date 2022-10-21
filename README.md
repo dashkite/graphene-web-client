@@ -17,6 +17,8 @@ film = await Films.get "the-godfather"
 
 await Films.put "the-godfather",
  { film..., rating: 5 }
+ 
+await Films.delete "the-godfather"
 ```
 This assumes you've already created the dbs and collections you want to work with (e.g. through the DashKite Workspaces App).
 
