@@ -32,58 +32,149 @@ client = Graphene.Client.create()
 ```
 
 ## Database
+### Create
+Create a new database. The database will be assigned a unique address when you create it. This returns a database object — see [Get](###Get) for more details.
 ```coffeescript
-# create a new database (this returns a database object — see "get" for more details)
-# the database will be assigned a unique address when you create it
+myDB = await client.db.create name: "My Database"
+```
+### Get
+Retrieve a database object with properties like name, created, and updated.
+```coffeescript
+myDB = await client.db.get address
+```
+### Put
+```coffeescript
+# with a database object
 
-myDBObject = await client.db.create name: "My Database"
+myDB.name = "My Favorite Database"
+await myDB.put()
 
-# get a database object with properties like name, created, and updated
+# with the client
 
-myDBObject = await client.db.get address
+await client.db.put address, name: "My Favorite Database"
+```
+### Delete
+```coffeescript
+# with a database object
 
-# store a database address for future use
+await myDB.delete()
 
-myDBReference = client.db address
+# with the client
+
+await client.db.delete address
 ```
 
 ## Collection 
-For each collection scenario we can use either a database object, database reference, or shortcut to achieve our goal.
+### Create
+Create a collection within a database by assigning the collection a byname unique to the database. This returns a collection object — see [Get](###Get) for more details.
 ```coffeescript
+# with a database object
 
-# create a collection within the database (this returns a collection object — see "get" for more details)
-# assign the collection a byname unique to the database
+myCollection = await myDB.collection.create byname: "favorite-films"
 
-myCollectionObject = await myDBObject.collection.create byname: "favorite-films"
-myCollectionObject = await myDBReference.collection.create byname: "favorite-films"
+# with the client
 
-# get a collection object with properties like status, created, and updated
-
-myCollectionObject = await myDBObject.collection.get "favorite-films"
-myCollectionObject = await myDBReference.collection.get "favorite-films"
-
-# store a collection byname and associated db address for future use
-
-myCollectionReference = myDBObject.collection "favorite-films"
-myCollectionReference = myDBReference.collection "favorite-films"
-myCollectionReference = client.collection { db: address, collection: "favorite-films" } # shortcut
+myCollectionObject = await (client.db address).collection.create byname: "favorite-films"
 ```
+### Get
+Retrieve a collection object with properties like status, created, and updated.
+```coffeescript
+# with a database object
 
-## Entries, Indices, and Metadata 
-For each scenario, we can use either a collection object or collection reference to achieve our goals.
+myCollection = await myDB.collection.get "favorite-films"
+
+# with the client
+
+myCollection = await (client.db address).collection.get "favorite-films"
+```
+### Put
+```coffeescript
+# with a database object
+
+await myDB.collection.put "favorite-films", name: "Fave Films"
+
+# with the client
+
+await (client.db address).collection.put "favorite-films", name: "Fave Films"
+
+# with a collection object
+
+myCollection.name = "Fave Films"
+await myCollection.put()
+```
+### Delete
+```coffeescript
+# with a database object
+
+await myDB.collection.delete "favorite-films"
+
+# with the client
+
+await (client.db address).collection.delete "favorite-films"
+
+# with a collection object
+
+await myCollection.delete()
+```
+### Get Status
+```coffeescript
+# with a database object
+
+{ status } = await myDB.collection.getStatus "favorite-films"
+
+# with the client
+
+{ status } = await (client.db address).collection.getStatus "favorite-films"
+
+# with a collection object
+
+{ status } = await myCollection.getStatus()
+```
+### List
+```coffeescript
+# with a database object
+
+collections = await myDB.collection.list()
+
+# with the client
+
+collections = await (client.db address).collection.list()
+```
+## Entries and Indices
+There are four ways to begin working with a collection's entry content, entry metadata, and indices.
+```coffeescript
+# with a database object
+
+Films = myDB.collection "favorite-films"
+
+# with the client 
+
+Films = (client.db address).collection "favorite-films"
+
+# with a shortcut
+
+Films = client.collection { db: address, collection: "favorite-films" }
+
+# with a collection object
+
+Films = myCollection.entries
+```
+### Entry Content
 ```coffeescript
 # get the content for an entry
 
-entryContent = await myCollectionObject.entries.get key
-entryContent = await myCollectionReference.get key
+film = await Films.get key
+```
+### Entry Metadata
 
-# create an index on the collection
-
-index = await myCollectionObject.entries.indices.create { key, sort }
-index = await myCollectionReference.indices.create { key, sort }
-
+```coffeescript
 # get the metadata and content for an entry
 
-entryWithMetadata = await myCollectionObject.entries.metadata.get key
-entryWithMetadata = await myCollectionReference.metadata.get key
+filmWithMetadata = await Films.metadata.get key
+```
+### Indices
+```coffeescript
+# create an index on the collection
+
+index = await Films.indices.create { key, sort }
 ```
