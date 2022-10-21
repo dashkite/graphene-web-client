@@ -3,7 +3,7 @@
 An implementation of the Graphene Client that targets the Web API.
 
 ## Example
-You can start working with your collections in three lines of code, if you've already created the db and collections you want to work with (e.g., through the DashKite Workspaces App).
+You can start working with your collections in three lines of code.
 
 ```coffeescript
 import * as Graphene from "@dashkite/graphene-web-client"
@@ -18,6 +18,8 @@ film = await Films.get "the-godfather"
 await Films.put "the-godfather",
  { film..., rating: 5 }
 ```
+This assumes you've already created the dbs and collections you want to work with (e.g. through the DashKite Workspaces App).
+
 
 ## Client
 ```coffeescript
