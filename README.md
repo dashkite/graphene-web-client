@@ -29,7 +29,7 @@ client = Graphene.Client.create()
 
 ## Database
 ```coffeescript
-# the database will have a unique address
+# the database will be assigned a unique address when you create it
 
 # create a new database (this returns a database object — see "get" for more details)
 
