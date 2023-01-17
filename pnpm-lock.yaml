@@ -1,13 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@dashkite/amen': ^0.1.2
-  '@dashkite/amen-console': file:../amen-console
+  '@dashkite/amen': ^0.2.0
+  '@dashkite/amen-console': ^0.0.2
   '@dashkite/assert': ^0.1.4
   '@dashkite/bake': ^0.0.6
   '@dashkite/dolores': file:../dolores
-  '@dashkite/genie': ^0.5.6
-  '@dashkite/genie-presets': file:../genie-presets
+  '@dashkite/genie': ^0.5.11
+  '@dashkite/genie-presets': ^0.6.0
   '@dashkite/graphene-client': file:../graphene-client
   '@dashkite/graphene-client-tests': file:../graphene-client-tests
   '@dashkite/graphite-core': file:../graphite-core
@@ -28,11 +28,11 @@ dependencies:
   '@dashkite/vega-client': file:../vega-client
 
 devDependencies:
-  '@dashkite/amen': 0.1.2
-  '@dashkite/amen-console': file:../amen-console
+  '@dashkite/amen': 0.2.0
+  '@dashkite/amen-console': 0.0.2
   '@dashkite/assert': 0.1.4
   '@dashkite/genie': 0.5.11
-  '@dashkite/genie-presets': file:../genie-presets
+  '@dashkite/genie-presets': 0.6.0
   '@dashkite/graphene-client-tests': file:../graphene-client-tests
   '@dashkite/polaris': file:../polaris
   '@dashkite/runes': file:../runes
@@ -3557,8 +3557,18 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
+  /@dashkite/amen-console/0.0.2:
+    resolution: {integrity: sha512-16xkmucNi9enIjXI3Khf54mdvDFG7+QSeB4/Xlh3AGKjPCwSQppV/DTVgaI5mkYcYO3b9v6RGrEGYvaji4ynVw==}
+    dependencies:
+      chalk: 4.1.2
+    dev: true
+
   /@dashkite/amen/0.1.2:
     resolution: {integrity: sha512-lQwxCo97oKnNrH+mNcF/fTi1WFY+YfOHBD31NDkvcu/R6HOtLQa08agyZBRk5kJrOjHYI8kAdOkjjOWw8LEC5g==}
+    dev: true
+
+  /@dashkite/amen/0.2.0:
+    resolution: {integrity: sha512-64cI0qvcLXFhfuvNGI/ebUgbs7Rx+45K1EjqsdLVYjEALeAPGqViujiSWVky9KHw1F93FVpJx1/B6mlZJLf2Tg==}
     dev: true
 
   /@dashkite/assert/0.1.4:
@@ -3590,6 +3600,34 @@ packages:
 
   /@dashkite/base64/1.0.1:
     resolution: {integrity: sha512-7O3HajSgWaie/kme1bcdXQnVsMXn4A5m9YOaxWnEZ8z9LCrnJ8BGnpTgFJUqSC4mv0Z/0NBcwTmeGCoEc9VYoA==}
+
+  /@dashkite/genie-presets/0.6.0:
+    resolution: {integrity: sha512-NkReC0yxiLfoyuAnOgEhkObz2syv1ESoaSV1qE0lIlhiLY3amGkRp1u5c+3JXuy/Iy5fNRO6EzoComkdG6YQAg==}
+    dependencies:
+      '@dashkite/joy': 0.3.16
+      '@dashkite/masonry': file:../masonry
+      '@dashkite/mimic': 0.2.4
+      '@dashkite/writeme': 0.2.0
+      ajv: 8.12.0
+      chalk: 4.1.2
+      coffeescript: 2.6.1
+      deepmerge: 4.2.2
+      execa: 5.1.1
+      express: 4.18.2
+      express-static: 1.2.6
+      js-yaml: 4.1.0
+      morgan: 1.10.0
+      node-fetch: 2.6.8
+      sort-package-json: 1.57.0
+      svgo: 2.8.0
+      svgstore: 3.0.1
+    transitivePeerDependencies:
+      - bluebird
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
+    dev: true
 
   /@dashkite/genie/0.5.11:
     resolution: {integrity: sha512-3HrkCg8AmYOPblXmE2FefRkkI+HJ1G2XEvUbgsGtUrDjmcX5LBouw225FE/wbftjfrVBnAVVW9zMpAPhUy3V0A==}
@@ -3776,7 +3814,7 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.1
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4588,7 +4626,7 @@ packages:
     engines: {node: '>= 10.17.0'}
     hasBin: true
     dependencies:
-      debug: 4.3.1
+      debug: 4.3.4
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -4878,7 +4916,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.1
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6468,36 +6506,6 @@ packages:
       - '@aws-sdk/signature-v4-crt'
       - aws-crt
       - encoding
-    dev: true
-
-  file:../genie-presets:
-    resolution: {directory: ../genie-presets, type: directory}
-    name: '@dashkite/genie-presets'
-    version: 0.6.0
-    dependencies:
-      '@dashkite/joy': 0.3.16
-      '@dashkite/masonry': file:../masonry
-      '@dashkite/mimic': 0.2.4
-      '@dashkite/writeme': 0.2.0
-      ajv: 8.12.0
-      chalk: 4.1.2
-      coffeescript: 2.6.1
-      deepmerge: 4.2.2
-      execa: 5.1.1
-      express: 4.18.2
-      express-static: 1.2.6
-      js-yaml: 4.1.0
-      morgan: 1.10.0
-      node-fetch: 2.6.8
-      sort-package-json: 1.57.0
-      svgo: 2.8.0
-      svgstore: 3.0.1
-    transitivePeerDependencies:
-      - bluebird
-      - bufferutil
-      - encoding
-      - supports-color
-      - utf-8-validate
     dev: true
 
   file:../graphene-client:
