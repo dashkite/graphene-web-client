@@ -35,7 +35,6 @@
     "@dashkite/bake": "^0.0.6",
     "@dashkite/dolores": "file:../dolores",
     "@dashkite/graphene-client": "file:../graphene-client",
-    "@dashkite/graphite-core": "file:../graphite-core",
     "@dashkite/joy": "^0.3.16",
     "@dashkite/vega-client": "file:../vega-client"
   }

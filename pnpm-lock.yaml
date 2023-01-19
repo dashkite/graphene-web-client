@@ -10,7 +10,6 @@ specifiers:
   '@dashkite/genie-presets': ^0.6.0
   '@dashkite/graphene-client': file:../graphene-client
   '@dashkite/graphene-client-tests': file:../graphene-client-tests
-  '@dashkite/graphite-core': file:../graphite-core
   '@dashkite/joy': ^0.3.16
   '@dashkite/polaris': file:../polaris
   '@dashkite/runes': file:../runes
@@ -23,7 +22,6 @@ dependencies:
   '@dashkite/bake': 0.0.6
   '@dashkite/dolores': file:../dolores
   '@dashkite/graphene-client': file:../graphene-client
-  '@dashkite/graphite-core': file:../graphite-core
   '@dashkite/joy': 0.3.16
   '@dashkite/vega-client': file:../vega-client
 
@@ -3670,6 +3668,9 @@ packages:
       - utf-8-validate
     dev: true
 
+  /@dashkite/parse/0.4.0:
+    resolution: {integrity: sha512-bZ9k1ST30by8GL+6zBXZZUGCYSmSzsVaF+NAgOxXrCMUUj0wB7kYyT/3Czf1iUNCS5KKaoEof+cjt5VJeaIgAA==}
+
   /@dashkite/tweetnacl/1.0.3:
     resolution: {integrity: sha512-qBw5yhOw8mCe7fV6sw/5DIfQLW3txB+MlSDngf7h2WwnRz5CWzmhVBnKuYHcMXX9u50T4iW0AR/FwEl6Tm/TMQ==}
 
@@ -6527,18 +6528,6 @@ packages:
       '@dashkite/joy': 0.3.16
     dev: true
 
-  file:../graphite-core:
-    resolution: {directory: ../graphite-core, type: directory}
-    name: '@dashkite/graphite-core'
-    version: 0.0.0
-    dependencies:
-      '@aws-sdk/client-dynamodb': 3.245.0
-      '@dashkite/base64': 1.0.1
-      '@dashkite/joy': 0.3.16
-    transitivePeerDependencies:
-      - aws-crt
-    dev: false
-
   file:../maeve:
     resolution: {directory: ../maeve, type: directory}
     name: '@dashkite/maeve'
@@ -6597,7 +6586,7 @@ packages:
   file:../parse:
     resolution: {directory: ../parse, type: directory}
     name: '@dashkite/parse'
-    version: 0.3.1
+    version: 0.4.0
 
   file:../polaris:
     resolution: {directory: ../polaris, type: directory}
@@ -6605,7 +6594,7 @@ packages:
     version: 0.0.0
     dependencies:
       '@dashkite/joy': 0.3.16
-      '@dashkite/parse': file:../parse
+      '@dashkite/parse': 0.4.0
       json-query: 2.2.2
 
   file:../runes:
