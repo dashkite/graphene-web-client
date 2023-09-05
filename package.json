@@ -25,7 +25,6 @@
     "@dashkite/assert": "^0.1.4",
     "@dashkite/dolores": "link:../dolores",
     "@dashkite/genie": "link:../genie",
-    "@dashkite/genie-presets": "link:../genie-presets",
     "@dashkite/graphene-client-tests": "link:../graphene-client-tests",
     "@dashkite/polaris": "link:../polaris",
     "@dashkite/runes": "link:../runes",
