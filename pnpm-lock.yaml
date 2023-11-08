@@ -1,83 +1,64 @@
-lockfileVersion: '6.0'
+lockfileVersion: 5.4
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
+specifiers:
+  '@dashkite/amen': ^0.2.0
+  '@dashkite/amen-console': ^0.0.2
+  '@dashkite/assert': ^0.1.4
+  '@dashkite/bake': ^0.0.6
+  '@dashkite/dolores': link:../dolores
+  '@dashkite/genie': link:../genie
+  '@dashkite/genie-coffee': link:../genie-coffee
+  '@dashkite/genie-yaml': link:../genie-yaml
+  '@dashkite/graphene-client': link:../graphene-client
+  '@dashkite/graphene-client-tests': link:../graphene-client-tests
+  '@dashkite/joy': ^0.3.16
+  '@dashkite/polaris': link:../polaris
+  '@dashkite/runes': link:../runes
+  '@dashkite/vega-client': link:../vega-client
+  fake-indexeddb: ^4.0.0
+  node-fetch: ^2.6.7
+  source-map-support: ^0.5.21
 
 dependencies:
-  '@dashkite/bake':
-    specifier: ^0.0.6
-    version: 0.0.6
-  '@dashkite/graphene-client':
-    specifier: link:../graphene-client
-    version: link:../graphene-client
-  '@dashkite/joy':
-    specifier: ^0.3.16
-    version: 0.3.16
-  '@dashkite/vega-client':
-    specifier: link:../vega-client
-    version: link:../vega-client
+  '@dashkite/bake': 0.0.6
+  '@dashkite/graphene-client': link:../graphene-client
+  '@dashkite/joy': 0.3.16
+  '@dashkite/vega-client': link:../vega-client
 
 devDependencies:
-  '@dashkite/amen':
-    specifier: ^0.2.0
-    version: 0.2.2
-  '@dashkite/amen-console':
-    specifier: ^0.0.2
-    version: 0.0.2
-  '@dashkite/assert':
-    specifier: ^0.1.4
-    version: 0.1.4
-  '@dashkite/dolores':
-    specifier: link:../dolores
-    version: link:../dolores
-  '@dashkite/genie':
-    specifier: link:../genie
-    version: link:../genie
-  '@dashkite/genie-coffee':
-    specifier: link:../genie-coffee
-    version: link:../genie-coffee
-  '@dashkite/genie-yaml':
-    specifier: link:../genie-yaml
-    version: link:../genie-yaml
-  '@dashkite/graphene-client-tests':
-    specifier: link:../graphene-client-tests
-    version: link:../graphene-client-tests
-  '@dashkite/polaris':
-    specifier: link:../polaris
-    version: link:../polaris
-  '@dashkite/runes':
-    specifier: link:../runes
-    version: link:../runes
-  fake-indexeddb:
-    specifier: ^4.0.0
-    version: 4.0.2
-  node-fetch:
-    specifier: ^2.6.7
-    version: 2.7.0
-  source-map-support:
-    specifier: ^0.5.21
-    version: 0.5.21
+  '@dashkite/amen': 0.2.2
+  '@dashkite/amen-console': 0.0.2
+  '@dashkite/assert': 0.1.4
+  '@dashkite/dolores': link:../dolores
+  '@dashkite/genie': link:../genie
+  '@dashkite/genie-coffee': link:../genie-coffee
+  '@dashkite/genie-yaml': link:../genie-yaml
+  '@dashkite/graphene-client-tests': link:../graphene-client-tests
+  '@dashkite/polaris': link:../polaris
+  '@dashkite/runes': link:../runes
+  fake-indexeddb: 4.0.2
+  node-fetch: 2.7.0
+  source-map-support: 0.5.21
 
 packages:
 
-  /@dashkite/amen-console@0.0.2:
+  /@dashkite/amen-console/0.0.2:
     resolution: {integrity: sha512-16xkmucNi9enIjXI3Khf54mdvDFG7+QSeB4/Xlh3AGKjPCwSQppV/DTVgaI5mkYcYO3b9v6RGrEGYvaji4ynVw==}
     dependencies:
       chalk: 4.1.2
     dev: true
 
-  /@dashkite/amen@0.2.2:
+  /@dashkite/amen/0.2.2:
     resolution: {integrity: sha512-bJBbRiIcQaKBT2A+EOltZaZMqGCptPw7rfSnTsu1AiicYWrXwe41zwo2W0a079OpJTLsH9v2vnU20xMCP9mQqA==}
     dev: true
 
-  /@dashkite/assert@0.1.4:
+  /@dashkite/assert/0.1.4:
     resolution: {integrity: sha512-OLOzI/lA+EwCh6znSexGAG1V4bkaT5gU04xl6ApEluv5jICnHhinZ707MObu+jhVVJ9uHDDlG85O+Afn1aTQoQ==}
     dependencies:
       '@dashkite/joy': 0.3.16
     dev: true
 
-  /@dashkite/bake@0.0.6:
+  /@dashkite/bake/0.0.6:
     resolution: {integrity: sha512-yBD2B4l1+nGa4JZ+CgxmhxDGnZvs+SIB8xl/rheINdmbfe1/tXswcwLsrz8qP5x4/9mDFVOq00vKauUCj0cIJA==}
     dependencies:
       '@dashkite/base64': 1.0.1
@@ -85,34 +66,34 @@ packages:
       '@dashkite/utf8': 1.0.1
     dev: false
 
-  /@dashkite/base64@1.0.1:
+  /@dashkite/base64/1.0.1:
     resolution: {integrity: sha512-7O3HajSgWaie/kme1bcdXQnVsMXn4A5m9YOaxWnEZ8z9LCrnJ8BGnpTgFJUqSC4mv0Z/0NBcwTmeGCoEc9VYoA==}
     dev: false
 
-  /@dashkite/joy@0.3.16:
+  /@dashkite/joy/0.3.16:
     resolution: {integrity: sha512-dsU0us4j1Pb+zceoBvLbnZ2PbmULkJUtM2vtWLxKmoc1DE4w9SVTiPTe6JWvF0A0vk90ldv+Lc9qEA5x3O+DtQ==}
 
-  /@dashkite/utf8@1.0.1:
+  /@dashkite/utf8/1.0.1:
     resolution: {integrity: sha512-58HZrEijYUG9p8SAf4o/NR7U3qUq//9XbkQ7T5cHIY/RFjCVg9vpWZlHXkcbZp7v3CAMJgEGVXt/5/upvOBQAw==}
     dev: false
 
-  /ansi-styles@4.3.0:
+  /ansi-styles/4.3.0:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
     engines: {node: '>=8'}
     dependencies:
       color-convert: 2.0.1
     dev: true
 
-  /base64-arraybuffer-es6@0.7.0:
+  /base64-arraybuffer-es6/0.7.0:
     resolution: {integrity: sha512-ESyU/U1CFZDJUdr+neHRhNozeCv72Y7Vm0m1DCbjX3KBjT6eYocvAJlSk6+8+HkVwXlT1FNxhGW6q3UKAlCvvw==}
     engines: {node: '>=6.0.0'}
     dev: true
 
-  /buffer-from@1.1.2:
+  /buffer-from/1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
 
-  /chalk@4.1.2:
+  /chalk/4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
     dependencies:
@@ -120,39 +101,39 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /color-convert@2.0.1:
+  /color-convert/2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
     dependencies:
       color-name: 1.1.4
     dev: true
 
-  /color-name@1.1.4:
+  /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
 
-  /domexception@1.0.1:
+  /domexception/1.0.1:
     resolution: {integrity: sha512-raigMkn7CJNNo6Ihro1fzG7wr3fHuYVytzquZKX5n0yizGsTcYgzdIUwj1X9pK0VvjeihV+XiclP+DjwbsSKug==}
     dependencies:
       webidl-conversions: 4.0.2
     dev: true
 
-  /fake-indexeddb@4.0.2:
+  /fake-indexeddb/4.0.2:
     resolution: {integrity: sha512-SdTwEhnakbgazc7W3WUXOJfGmhH0YfG4d+dRPOFoYDRTL6U5t8tvrmkf2W/C3W1jk2ylV7Wrnj44RASqpX/lEw==}
     dependencies:
       realistic-structured-clone: 3.0.0
     dev: true
 
-  /has-flag@4.0.0:
+  /has-flag/4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
     dev: true
 
-  /lodash@4.17.21:
+  /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
 
-  /node-fetch@2.7.0:
+  /node-fetch/2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
     peerDependencies:
@@ -164,12 +145,12 @@ packages:
       whatwg-url: 5.0.0
     dev: true
 
-  /punycode@2.3.0:
-    resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
+  /punycode/2.3.1:
+    resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
     dev: true
 
-  /realistic-structured-clone@3.0.0:
+  /realistic-structured-clone/3.0.0:
     resolution: {integrity: sha512-rOjh4nuWkAqf9PWu6JVpOWD4ndI+JHfgiZeMmujYcPi+fvILUu7g6l26TC1K5aBIp34nV+jE1cDO75EKOfHC5Q==}
     dependencies:
       domexception: 1.0.1
@@ -177,37 +158,37 @@ packages:
       typeson-registry: 1.0.0-alpha.39
     dev: true
 
-  /source-map-support@0.5.21:
+  /source-map-support/0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
     dependencies:
       buffer-from: 1.1.2
       source-map: 0.6.1
     dev: true
 
-  /source-map@0.6.1:
+  /source-map/0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /supports-color@7.2.0:
+  /supports-color/7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
     dependencies:
       has-flag: 4.0.0
     dev: true
 
-  /tr46@0.0.3:
+  /tr46/0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: true
 
-  /tr46@2.1.0:
+  /tr46/2.1.0:
     resolution: {integrity: sha512-15Ih7phfcdP5YxqiB+iDtLoaTz4Nd35+IiAv0kQ5FNKHzXgdWqPoTIqEDDJmXceQt4JZk6lVPT8lnDlPpGDppw==}
     engines: {node: '>=8'}
     dependencies:
-      punycode: 2.3.0
+      punycode: 2.3.1
     dev: true
 
-  /typeson-registry@1.0.0-alpha.39:
+  /typeson-registry/1.0.0-alpha.39:
     resolution: {integrity: sha512-NeGDEquhw+yfwNhguLPcZ9Oj0fzbADiX4R0WxvoY8nGhy98IbzQy1sezjoEFWOywOboj/DWehI+/aUlRVrJnnw==}
     engines: {node: '>=10.0.0'}
     dependencies:
@@ -216,32 +197,32 @@ packages:
       whatwg-url: 8.7.0
     dev: true
 
-  /typeson@6.1.0:
+  /typeson/6.1.0:
     resolution: {integrity: sha512-6FTtyGr8ldU0pfbvW/eOZrEtEkczHRUtduBnA90Jh9kMPCiFNnXIon3vF41N0S4tV1HHQt4Hk1j4srpESziCaA==}
     engines: {node: '>=0.1.14'}
     dev: true
 
-  /webidl-conversions@3.0.1:
+  /webidl-conversions/3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
     dev: true
 
-  /webidl-conversions@4.0.2:
+  /webidl-conversions/4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
     dev: true
 
-  /webidl-conversions@6.1.0:
+  /webidl-conversions/6.1.0:
     resolution: {integrity: sha512-qBIvFLGiBpLjfwmYAaHPXsn+ho5xZnGvyGvsarywGNc8VyQJUMHJ8OBKGGrPER0okBeMDaan4mNBlgBROxuI8w==}
     engines: {node: '>=10.4'}
     dev: true
 
-  /whatwg-url@5.0.0:
+  /whatwg-url/5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
     dev: true
 
-  /whatwg-url@8.7.0:
+  /whatwg-url/8.7.0:
     resolution: {integrity: sha512-gAojqb/m9Q8a5IV96E3fHJM70AzCkgt4uXYX2O7EmuyOnLrViCQlsEBmF9UQIu3/aeAIp2U17rtbpZWNntQqdg==}
     engines: {node: '>=10'}
     dependencies:
