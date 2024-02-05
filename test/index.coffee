@@ -20,7 +20,7 @@ do ({ email, client } = {}) ->
 
   email = "alice@acme.org"
 
-  localStorage.setItem "identity", email
+  localStorage.setItem "email", email
   # Runes.store await getRune "db create", { email }
 
   client = Graphene.Client.create()
