@@ -31,6 +31,7 @@
     "@dashkite/graphene-client-tests": "link:../graphene-client-tests",
     "@dashkite/polaris": "link:../polaris",
     "@dashkite/runes": "link:../runes",
+    "@dashkite/vista": "link:../vista",
     "fake-indexeddb": "^4.0.0",
     "node-fetch": "^2.6.7",
     "source-map-support": "^0.5.21"

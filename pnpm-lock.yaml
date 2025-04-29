@@ -54,6 +54,9 @@ importers:
       '@dashkite/runes':
         specifier: link:../runes
         version: link:../runes
+      '@dashkite/vista':
+        specifier: link:../vista
+        version: link:../vista
       fake-indexeddb:
         specifier: ^4.0.0
         version: 4.0.2
