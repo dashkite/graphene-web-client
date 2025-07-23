@@ -29,7 +29,7 @@
     "@dashkite/genie-coffee": "link:../genie-coffee",
     "@dashkite/genie-yaml": "link:../genie-yaml",
     "@dashkite/graphene-client-tests": "link:../graphene-client-tests",
-    "@dashkite/polaris": "link:../polaris",
+    "@dashkite/polaris": "^0.10.2",
     "@dashkite/runes": "link:../runes",
     "fake-indexeddb": "^4.0.0",
     "node-fetch": "^2.6.7",

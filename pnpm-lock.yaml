@@ -49,8 +49,8 @@ importers:
         specifier: link:../graphene-client-tests
         version: link:../graphene-client-tests
       '@dashkite/polaris':
-        specifier: link:../polaris
-        version: link:../polaris
+        specifier: ^0.10.2
+        version: 0.10.2
       '@dashkite/runes':
         specifier: link:../runes
         version: link:../runes
@@ -89,8 +89,20 @@ packages:
   '@dashkite/joy@0.3.16':
     resolution: {integrity: sha512-dsU0us4j1Pb+zceoBvLbnZ2PbmULkJUtM2vtWLxKmoc1DE4w9SVTiPTe6JWvF0A0vk90ldv+Lc9qEA5x3O+DtQ==}
 
+  '@dashkite/joy@0.7.0':
+    resolution: {integrity: sha512-1sldJtFRJJwwm1yb2vrhUNvs9ns30ROS5E7KwBTkJ+yPVNsbgIFbakYn7AQSaEsLs/ZdqbHW7dWx+Wo/uG4D7w==}
+
   '@dashkite/kaiko@0.3.3':
     resolution: {integrity: sha512-XnAvVr9y2MsDqMLr4A24vkLF7Iuq3E8RjHEEpqhe29P5NevVX9jXKcXUStNMp9MSJbjHd2pqUNiM5Vvdja9ggg==}
+
+  '@dashkite/lru-cache@0.1.0':
+    resolution: {integrity: sha512-bAN6/NxYrorgiKMdh0/f6U6AMdLoBFn9sJUZDD+Od/Fw6O1istAMF2hQugdO3SOeBOUi9dQN+rXMP60dJ/2zOw==}
+
+  '@dashkite/polaris@0.10.2':
+    resolution: {integrity: sha512-MNDi2Xza4aZME7QYLdPGJBM79bxNxlkkU7mVLtHiKWEB5XrhE3IA+hpGWpODI1t37hPI3OKS5wGZar/38fmqhQ==}
+
+  '@dashkite/scan@0.4.0':
+    resolution: {integrity: sha512-fC7D9+SCy34D5qi25ZAH8tzJgqPc9aBBhqrRCQ3RoD6cDrrfvlROxLzKsLfs+zv05yHPtuc/9ZONyyAW3/JTvg==}
 
   '@dashkite/utf8@1.0.1':
     resolution: {integrity: sha512-58HZrEijYUG9p8SAf4o/NR7U3qUq//9XbkQ7T5cHIY/RFjCVg9vpWZlHXkcbZp7v3CAMJgEGVXt/5/upvOBQAw==}
@@ -265,6 +277,10 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
+  jsonpath-plus@7.2.0:
+    resolution: {integrity: sha512-zBfiUPM5nD0YZSBT/o/fbCUlCcepMIdP0CJZxM1+KgA4f2T206f6VAg9e7mX35+KlMaIc5qXW34f3BnwJ3w+RA==}
+    engines: {node: '>=12.0.0'}
+
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
@@ -390,7 +406,21 @@ snapshots:
 
   '@dashkite/joy@0.3.16': {}
 
+  '@dashkite/joy@0.7.0': {}
+
   '@dashkite/kaiko@0.3.3': {}
+
+  '@dashkite/lru-cache@0.1.0': {}
+
+  '@dashkite/polaris@0.10.2':
+    dependencies:
+      '@dashkite/joy': 0.7.0
+      '@dashkite/scan': 0.4.0
+      jsonpath-plus: 7.2.0
+
+  '@dashkite/scan@0.4.0':
+    dependencies:
+      '@dashkite/lru-cache': 0.1.0
 
   '@dashkite/utf8@1.0.1': {}
 
@@ -530,6 +560,8 @@ snapshots:
   js-yaml@4.1.0:
     dependencies:
       argparse: 2.0.1
+
+  jsonpath-plus@7.2.0: {}
 
   lodash@4.17.21: {}
 
